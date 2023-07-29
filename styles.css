@@ -25,6 +25,12 @@ nav ul {
 
 nav li {
   margin: 0 15px;
+  position: relative; /* Required for positioning the pseudo-element */
+  padding: 8px 16px; /* Add some padding around the text */
+  font-size: 18px; /* Set the font size for the topic text */
+  color: #333; /* Set the text color */
+  background-color: rgba(0, 255, 34, 0.3); /* Red color with 30% transparency */
+  border-radius: 8px;
 }
 
 nav a {
@@ -56,6 +62,12 @@ main {
 
   nav li {
     margin: 10px 0;
+    position: relative; /* Required for positioning the pseudo-element */
+    padding: 8px 16px; /* Add some padding around the text */
+    font-size: 18px; /* Set the font size for the topic text */
+    color: #333; /* Set the text color */
+    background-color: rgba(0, 255, 34, 0.3); /* Red color with 30% transparency */
+    border-radius: 8px;
   }
 
   main {
