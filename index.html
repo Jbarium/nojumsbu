@@ -4,6 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Astronomy Association</title>
+  <script>
+    const randomVersionNumber = Math.floor(Math.random() * 9999999) + 1;
+
+    const styleLink = document.createElement('link');
+    styleLink.rel = 'stylesheet';
+    styleLink.href = `styles.css?v=${randomVersionNumber}`;
+
+    document.head.appendChild(styleLink);
+  </script>
+  
+
   <link rel="stylesheet" href="styles.css">
   <title>Astronomy Association</title>
   <link rel="stylesheet" href="styles.css">
@@ -29,3 +40,4 @@
   <script src="scripts.js"></script>
 </body>
 </html>
+
