@@ -1,5 +1,6 @@
 /* Default styles for all devices */
 body {
+  background-image: url('site-images/Galaxies.png');
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
