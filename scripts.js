@@ -1,3 +1,11 @@
+// Function to fetch content from Markdown files
+async function fetchMarkdownContent(filePath) {
+  const response = await fetch(filePath);
+  const content = await response.text();
+  return content;
+}
+
+// Function to render content in the main section
 async function renderContent() {
   const urlParams = new URLSearchParams(window.location.search);
   const page = urlParams.get('page') || 'about'; // Default to 'about' if the page parameter is not specified
@@ -15,3 +23,8 @@ async function renderContent() {
     document.querySelector('#content').innerHTML = '<p>Content not found.</p>';
   }
 }
+
+// Initialize the website
+document.addEventListener('DOMContentLoaded', () => {
+  renderContent();
+});
