@@ -40,6 +40,10 @@ nav a {
 main {
   border-top: 1px solid #ccc;
   padding: 20px;
+
+  /* New styles for the big yellow 50% transparent rectangle */
+  background-color: rgba(255, 255, 0, 0.5);
+  border-radius: 10px;
 }
 
 /* Responsive Design */
@@ -55,10 +59,23 @@ main {
 
   nav li {
     font-size: 12px; /* Set the font size for the topic text */
-    margin: 10px 1; /* Add some spacing between the horizontal topics */
+    margin: 10px 1px; /* Add some spacing between the horizontal topics */
   }
 
   main {
     padding: 10px;
+    /* Adjust the background color transparency for mobile devices */
+    background-color: rgba(255, 255, 0, 0.8);
+  }
+}
+
+/* Adjust styles for mobile devices */
+@media (max-width: 480px) {
+  body {
+    font-size: 12px;
+  }
+
+  header {
+    padding: 5px;
   }
 }
