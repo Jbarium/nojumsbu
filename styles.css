@@ -31,6 +31,7 @@ nav li {
   color: #333; /* Set the text color */
   background-color: rgba(212, 255, 0, 0.497); /* Red color with 30% transparency */
   border-radius: 8px;
+  cursor: pointer;
 }
 
 nav a {
