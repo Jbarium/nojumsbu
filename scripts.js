@@ -1,30 +1,19 @@
-// Function to fetch content from Markdown files
-async function fetchMarkdownContent(filePath) {
-  const response = await fetch(filePath);
-  const content = await response.text();
-  return content;
-}
-
-// Function to render content in the main section
 async function renderContent() {
   const urlParams = new URLSearchParams(window.location.search);
-  const page = urlParams.get('page') || 'about'; // Default to 'about' if the page parameter is not specified
+  const page = urlParams.get('page') || 'about';
+
+  console.log('Fetching content for page:', page);
 
   try {
-    let content;
-    if (page === 'transparency' || page === 'transparencypolicy') {
-      content = await fetchMarkdownContent('content/transparencypolicy.md');
-    } else {
-      content = await fetchMarkdownContent('content/' + page + '.md');
-    }
+    const filePath = `content/${page}.md`;
+    console.log('File path:', filePath);
+
+    const content = await fetchMarkdownContent(filePath);
+    console.log('Content fetched:', content);
 
     document.querySelector('#content').innerHTML = marked(content);
   } catch (error) {
-    document.querySelector('#content').innerHTML = '<p>Welcome! Hello world!</p>';
+    console.error('Error fetching content:', error);
+    document.querySelector('#content').innerHTML = '<p>Content not found.</p>';
   }
 }
-
-// Initialize the website
-document.addEventListener('DOMContentLoaded', () => {
-  renderContent();
-});
