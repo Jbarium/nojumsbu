@@ -8,7 +8,6 @@ body {
 
 header {
   border-bottom: 4px solid #ccc;
-
   background-image: url('site-images/nightsky.png');
   background-color: #333;
   color: #fff;
@@ -24,8 +23,7 @@ nav ul {
 }
 
 nav li {
-  margin: 0 15px;
-  position: relative; /* Required for positioning the pseudo-element */
+  margin: 0 14px;
   padding: 8px 16px; /* Add some padding around the text */
   font-size: 14px; /* Set the font size for the topic text */
   color: #333; /* Set the text color */
@@ -41,7 +39,6 @@ nav a {
 
 main {
   border-top: 1px solid #ccc;
-
   padding: 20px;
 }
 
@@ -56,37 +53,12 @@ main {
     padding: 10px;
   }
 
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-  }
-
   nav li {
-    margin: 10px 0;
-    position: relative; /* Required for positioning the pseudo-element */
-    padding: 8px 16px; /* Add some padding around the text */
     font-size: 12px; /* Set the font size for the topic text */
-    color: #333; /* Set the text color */
-    background-color: rgba(212, 255, 0, 0.497); /* Red color with 30% transparency */
-    border-radius: 8px;
+    margin: 10px 1; /* Add some spacing between the horizontal topics */
   }
 
   main {
     padding: 10px;
-  }
-}
-
-/* Adjust styles for mobile devices */
-@media (max-width: 480px) {
-  body {
-    font-size: 12px;
-  }
-
-  header {
-    padding: 5px;
-  }
-
-  nav {
-    font-size: 9px;
   }
 }
