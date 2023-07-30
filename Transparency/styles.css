@@ -55,7 +55,7 @@ main {
 
   nav li {
     font-size: 12px; /* Set the font size for the topic text */
-    margin: 10px 1; /* Add some spacing between the horizontal topics */
+    margin: 10px 1px; /* Add some spacing between the horizontal topics */
   }
 
   main {
