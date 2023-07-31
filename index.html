@@ -1,54 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SBU Astronomy Association</title>
-  <link rel="stylesheet" href="styles.css">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SBU Astronomy Association</title>
-  <!-- Cache control for CSS file -->
-  <link rel="stylesheet" href="styles.css" type="text/css" media="all" />
-  <meta http-equiv="Cache-Control" content="max-age=86400">
-
-  <!-- Cache control for JavaScript file -->
-  <script src="scripts.js"></script>
-  <meta http-equiv="Cache-Control" content="max-age=86400">
-
-  <!-- Cache control for image files -->
-  <link rel="icon" href="site-images/favicon.ico" type="image/x-icon">
-  <link rel="apple-touch-icon" sizes="180x180" href="site-images/apple-touch-icon.png">
-  <meta http-equiv="Cache-Control" content="max-age=604800">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SBU Astronomy Association</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
-
 <body>
-  <header>
-    <h1>Astronomy Association (v 0.0.2)</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="index.html?page=transparencypolicy">Transparency Policy</a></li>
-        <li><a href="index.html?page=events">Events</a></li>
-        <li><a href="index.html?page=contents">Contents</a></li>
-        <li><a href="index.html?page=about">About</a></li>
-      </ul>
-    </nav>
-  </header>
-  <footer>
-    <!-- Footer content -->
-  </footer>
-  <main id="content">
-    <!-- Content will be dynamically rendered here -->
-  </main>
+    <!-- Include header -->
+    <header>
+        <!-- Use the contents of layouts/header.html here -->
+        <nav class="navbar">
+            <div class="container">
+                <a href="index.html" class="logo">SBU Astronomy Association</a>
+                <ul class="nav-links">
+                    <li><a href="#" data-topic="home">Home</a></li>
+                    <li><a href="#" data-topic="about">About</a></li>
+                    <li><a href="#" data-topic="events">Events</a></li>
+                    <li><a href="#" data-topic="contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
 
+    <!-- Content for homepage -->
+    <main class="main-content">
+        <!-- Use the content from markdown/home.md here -->
+        <div class="container" id="content">
+            <!-- Content will be dynamically loaded here -->
+        </div>
+    </main>
 
-  
+    <!-- Include footer -->
+    <footer class="footer">
+        <!-- Use the contents of layouts/footer.html here -->
+        <div class="container">
+            <p>&copy; 2023 SBU Astronomy Association. All rights reserved.</p>
+            <ul class="social-links">
+                <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+            </ul>
+        </div>
+    </footer>
 
-  <script src="scripts.js"></script>
+    <!-- Include main.js -->
+    <script src="js/main.js"></script>
 </body>
-
 </html>
-
-
