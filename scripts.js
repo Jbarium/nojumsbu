@@ -10,9 +10,9 @@ async function renderContent(page) {
   try {
     let content;
     if (page === 'transparency') {
-      content = await fetchMarkdownContent('content/transparencypolicy.md');
+      content = await fetchMarkdownContent('../content/transparencypolicy.md');
     } else {
-      content = await fetchMarkdownContent(`content/${page}.md`);
+      content = await fetchMarkdownContent(`../content/${page}.md`);
     }
 
     document.querySelector('#content').innerHTML = marked(content);
