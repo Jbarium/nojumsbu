@@ -6,16 +6,13 @@ async function fetchMarkdownContent(filePath) {
 }
 
 // Function to render content in the main section
-async function renderContent() {
-  const urlParams = new URLSearchParams(window.location.search);
-  const page = urlParams.get('page') || 'about'; // Default to 'about' if the page parameter is not specified
-
+async function renderContent(page) {
   try {
     let content;
-    if (page === 'transparency' || page === 'transparencypolicy') {
+    if (page === 'transparency') {
       content = await fetchMarkdownContent('content/transparencypolicy.md');
     } else {
-      content = await fetchMarkdownContent('content/' + page + '.md');
+      content = await fetchMarkdownContent(`content/${page}.md`);
     }
 
     document.querySelector('#content').innerHTML = marked(content);
@@ -24,7 +21,18 @@ async function renderContent() {
   }
 }
 
+// Function to handle click events on navigation links
+function handleNavigationClick(event) {
+  event.preventDefault();
+  const page = event.target.dataset.page;
+  renderContent(page);
+}
+
 // Initialize the website
 document.addEventListener('DOMContentLoaded', () => {
-  renderContent();
+  const navigationLinks = document.querySelectorAll('.navigation-link');
+  navigationLinks.forEach(link => link.addEventListener('click', handleNavigationClick));
+
+  // Default to rendering the 'about' page on initial load
+  renderContent('about');
 });
