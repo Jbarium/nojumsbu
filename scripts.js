@@ -1,20 +1,21 @@
 // Function to fetch content from Markdown files
 async function fetchMarkdownContent(filePath) {
-  const response = await fetch(filePath);
-  const content = await response.text();
-  return content;
+  try {
+    const response = await fetch(filePath);
+    const content = await response.text();
+    return content;
+  } catch (error) {
+    console.error(error);
+    return '';
+  }
 }
 
 // Function to render content in the main section
 async function renderContent(page) {
   try {
-    let content;
-    if (page === 'transparency') {
-      content = await fetchMarkdownContent('../content/transparencypolicy.md');
-    } else {
-      content = await fetchMarkdownContent(`../content/${page}.md`);
-    }
-
+    // Convert the page name to lowercase and remove any spaces
+    const sanitizedPage = page.toLowerCase().replace(/\s/g, '');
+    const content = await fetchMarkdownContent(`content/${sanitizedPage}.md`);
     document.querySelector('#content').innerHTML = marked(content);
   } catch (error) {
     document.querySelector('#content').innerHTML = '<p>Content not found.</p>';
